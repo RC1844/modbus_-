@@ -45,62 +45,15 @@ namespace 上位机
 
             }
         }
-        /// <summary>
-        /// 串口数据发送
-        /// </summary>
-        /// <param name="code">代码指令</param>
-        /// <param name="data">数据</param>
-        /// <param name="len">数据长度 默认为1位</param>
-        private void PortWrite(byte code, uint data, int len = 1)
-        {
-            if (serialPort.IsOpen)
-            {
-                byte[] pw = new byte[10];
-                pw[0] = 0xff;
-                pw[1] = code;
-                for (int i = 0; i < len; i++)
-                {
-                    pw[i + 2] = (byte)(data >> (8 * (len - 1 - i)));
-                }
-                ModBusCRC16(ref pw, len + 1, true);
-                serialPort.Write(pw, 0, len + 6);
-                //serialPort.Write("\r\n");
-            }
-        }
-        private void SerialPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
-        {
-            Delay(1);
-            try
-            {
-                int len = serialPort.BytesToRead;
-                byte[] indata = new byte[len];
-                serialPort.Read(indata, 0, len);
-                serialPort.DiscardInBuffer();
-                string temp = "";
-                foreach (var item in indata)
-                {
-                    temp += string.Format("0x{0:X2} ", item);
-                }
-                textBox2.AppendText(temp + "\r\n");
-                Modbus(ref indata, len);
-            }
-            catch /*(Exception error)*/
-            {
-                //MessageBox.Show(error.Message);
-            }
-        }
-        private void But_Port_Link_Click(object sender, EventArgs e)
-        {
-            if (serialPort.IsOpen)
-            {
+
+        private void But_Port_Link_Click(object sender, EventArgs e){
+            if (serialPort.IsOpen){
                 serialPort.Close();
                 But_Port_Link.Text = "打开串口";
                 But_Port_Link.ImageKey = "OFF.png";
             }
-            else
-            {
-                try
-                {
+            else{
+                try{
                     serialPort.PortName = (string)comboBox.SelectedItem;
                     serialPort.BaudRate = Convert.ToInt32(comboBox1.SelectedItem);
                     serialPort.StopBits = (StopBits)comboBox2.SelectedIndex + 1;
@@ -110,8 +63,7 @@ namespace 上位机
                     But_Port_Link.Text = "关闭串口";
                     But_Port_Link.ImageKey = "ON.png";
                 }
-                catch (Exception error)
-                {
+                catch (Exception error){
                     MessageBox.Show(error.Message);
                 }
             }
@@ -174,12 +126,10 @@ namespace 上位机
         private void But_LEDFlsh_Click(object sender, EventArgs e)
         {
             uint temp = 0x00;
-            if (Check_LED0.Checked)
-            {
+            if (Check_LED0.Checked){
                 temp += 0x01;
             }
-            if (Check_LED1.Checked)
-            {
+            if (Check_LED1.Checked){
                 temp += 0x10;
             }
             PortWrite(0x02, temp);

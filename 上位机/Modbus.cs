@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO.Ports;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -8,10 +9,53 @@ namespace 上位机
 {
     partial class MainFrom
     {
-        private List<int> ADC_Data= new List<int>{0,0,0,0,0,0 };
+        /// <summary>
+        /// 串口数据发送
+        /// </summary>
+        /// <param name="code">代码指令</param>
+        /// <param name="data">数据</param>
+        /// <param name="len">数据长度(字节) 默认为1</param>
+        private void PortWrite(byte code, uint data, int len = 1)
+        {
+            if (serialPort.IsOpen)
+            {
+                byte[] pw = new byte[10];
+                pw[0] = 0xff;
+                pw[1] = code;
+                for (int i = 0; i < len; i++)
+                {
+                    pw[i + 2] = (byte)(data >> (8 * (len - 1 - i)));
+                }
+                ModBusCRC16(ref pw, len + 1, true);
+                serialPort.Write(pw, 0, len + 6);
+            }
+        }
+        private void SerialPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
+        {
+            Delay(1);
+            try
+            {
+                int len = serialPort.BytesToRead;
+                byte[] indata = new byte[len];
+                serialPort.Read(indata, 0, len);
+                serialPort.DiscardInBuffer();
+                string temp = "";
+                foreach (var item in indata)
+                {
+                    temp += string.Format("0x{0:X2} ", item);
+                }
+                textBox2.AppendText(temp + "\r\n");
+                Modbus(ref indata, len);
+            }
+            catch /*(Exception error)*/
+            {
+                //MessageBox.Show(error.Message);
+            }
+        }
+        private List<int> ADC_Data = new List<int> { 0, 0, 0, 0, 0, 0 };
         private void ADC_Chart(int Data)
         {
-            if (ADC_Data.Count>=7)
+            if (ADC_Data.Count >= 7)
             {
                 ADC_Data.RemoveAt(0);
             }
@@ -20,10 +64,10 @@ namespace 上位机
             Chart_ABC.Series[0].Points.Clear();
             for (int i = 0; i < len; i++)
             {
-                Chart_ABC.Series[0].Points.AddY( ADC_Data[i]);
+                Chart_ABC.Series[0].Points.AddY(ADC_Data[i]);
             }
         }
-        private void Modbus(ref byte[] indata,int len)
+        private void Modbus(ref byte[] indata, int len)
         {
             ModBusCRC16(ref indata, len - 5, false);
             if (indata[0] == 0xfe)
@@ -55,36 +99,39 @@ namespace 上位机
                         }
                         break;
                     case 0x01:
-                        textBox1.Text = (Get_Data(ref indata,2,5)).ToString() ;
+                        textBox1.Text = (Get_Data(ref indata, 2, 5)).ToString();
                         break;
                     case 0xa0:
-                        ADC_Chart(Get_Data(ref indata,2,3));
+                        ADC_Chart(Get_Data(ref indata, 2, 3));
                         break;
                     default:
-
                         break;
                 }
             }
         }
-        private int Get_Data(ref byte[] cmd,byte on,byte to)
+        private int Get_Data(ref byte[] cmd, byte on, byte to)
         {
             int data = 0;
             int len = to - on + 1;
             for (int i = 0; i < len; i++)
             {
-                data += cmd[on + i] << (8 * (len - i-1));
+                data += cmd[on + i] << (8 * (len - i - 1));
             }
             return data;
         }
+        /// <summary>
+        /// 数据校验
+        /// </summary>
+        /// <param name="cmd">需校验的数据数组</param>
+        /// <param name="len">数据位长度</param>
+        /// <param name="set">true设置校验码，false检查校验码</param>
         private void ModBusCRC16(ref byte[] cmd, int len, bool set)
         {
             if (cmd == null)
             {
                 throw new ArgumentNullException(nameof(cmd));
             }
-
             ushort i, j, tmp, CRC16;
-
             CRC16 = 0xFFFF;             //CRC寄存器初始值
             for (i = 1; i < len + 1; i++)
             {
@@ -110,22 +157,13 @@ namespace 上位机
             {
                 if (cmd[i++] == (byte)(CRC16 & 0x00FF))
                 {
-                    if (cmd[i++] == (byte)((CRC16 & 0xFF00) >> 8))
-                    {
-                        cmd[0] -= 1;
-                    }
-                    else
-                    {
-                        cmd[0] = 0;
-                    }
+                    if (cmd[i++] == (byte)((CRC16 & 0xFF00) >> 8)) cmd[0] -= 1;
+                    else cmd[0] = 0;
                 }
-                else
-                {
-                    cmd[0] = 0;
-                }
+                else cmd[0] = 0;
             }
         }
-        public void Delay(int milliSecond=2)
+        public void Delay(int milliSecond = 2)
         {
             int start = Environment.TickCount;
             while (Math.Abs(Environment.TickCount - start) < milliSecond)

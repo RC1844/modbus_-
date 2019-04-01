@@ -30,15 +30,15 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainFrom));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint1 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 0D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint2 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 0D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint3 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 0D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint4 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 0D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint5 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 0D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint6 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 0D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint7 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 10D);
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint8 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 0D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint9 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 0D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint10 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 0D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint11 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 0D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint12 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 0D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint13 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 0D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint14 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 10D);
             this.serialPort = new System.IO.Ports.SerialPort(this.components);
             this.comboBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -94,6 +94,7 @@
             this.But_Timer = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.statusStrip.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Chart_ABC)).BeginInit();
@@ -243,9 +244,9 @@
             this.But_Port_Link.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.But_Port_Link.ImageKey = "OFF.png";
             this.But_Port_Link.ImageList = this.ImageList;
-            this.But_Port_Link.Location = new System.Drawing.Point(80, 153);
+            this.But_Port_Link.Location = new System.Drawing.Point(79, 154);
             this.But_Port_Link.Name = "But_Port_Link";
-            this.But_Port_Link.Size = new System.Drawing.Size(94, 30);
+            this.But_Port_Link.Size = new System.Drawing.Size(95, 32);
             this.But_Port_Link.TabIndex = 11;
             this.But_Port_Link.Text = "打开串口";
             this.But_Port_Link.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -266,7 +267,7 @@
             this.toolLabel});
             this.statusStrip.Location = new System.Drawing.Point(0, 428);
             this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(800, 22);
+            this.statusStrip.Size = new System.Drawing.Size(700, 22);
             this.statusStrip.TabIndex = 12;
             this.statusStrip.Text = "statusStrip1";
             // 
@@ -320,16 +321,16 @@
             this.groupBox1.Controls.Add(this.But_LED1_ON);
             this.groupBox1.Controls.Add(this.But_LED0_OFF);
             this.groupBox1.Controls.Add(this.But_LED0_ON);
-            this.groupBox1.Location = new System.Drawing.Point(248, 18);
+            this.groupBox1.Location = new System.Drawing.Point(198, 18);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(234, 227);
+            this.groupBox1.Size = new System.Drawing.Size(173, 191);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "状态控制";
             // 
             // But_LEDFlsh
             // 
-            this.But_LEDFlsh.Location = new System.Drawing.Point(154, 102);
+            this.But_LEDFlsh.Location = new System.Drawing.Point(87, 106);
             this.But_LEDFlsh.Name = "But_LEDFlsh";
             this.But_LEDFlsh.Size = new System.Drawing.Size(75, 38);
             this.But_LEDFlsh.TabIndex = 10;
@@ -342,7 +343,7 @@
             this.Check_LED1.AutoSize = true;
             this.Check_LED1.Checked = true;
             this.Check_LED1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.Check_LED1.Location = new System.Drawing.Point(73, 124);
+            this.Check_LED1.Location = new System.Drawing.Point(6, 128);
             this.Check_LED1.Name = "Check_LED1";
             this.Check_LED1.Size = new System.Drawing.Size(48, 16);
             this.Check_LED1.TabIndex = 9;
@@ -354,7 +355,7 @@
             this.Check_LED0.AutoSize = true;
             this.Check_LED0.Checked = true;
             this.Check_LED0.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.Check_LED0.Location = new System.Drawing.Point(73, 102);
+            this.Check_LED0.Location = new System.Drawing.Point(6, 106);
             this.Check_LED0.Name = "Check_LED0";
             this.Check_LED0.Size = new System.Drawing.Size(48, 16);
             this.Check_LED0.TabIndex = 8;
@@ -363,7 +364,7 @@
             // 
             // But_BEEP_Delay
             // 
-            this.But_BEEP_Delay.Location = new System.Drawing.Point(154, 146);
+            this.But_BEEP_Delay.Location = new System.Drawing.Point(87, 150);
             this.But_BEEP_Delay.Name = "But_BEEP_Delay";
             this.But_BEEP_Delay.Size = new System.Drawing.Size(75, 23);
             this.But_BEEP_Delay.TabIndex = 7;
@@ -373,7 +374,7 @@
             // 
             // BEEP_ms
             // 
-            this.BEEP_ms.Location = new System.Drawing.Point(73, 146);
+            this.BEEP_ms.Location = new System.Drawing.Point(6, 150);
             this.BEEP_ms.Name = "BEEP_ms";
             this.BEEP_ms.Size = new System.Drawing.Size(75, 21);
             this.BEEP_ms.TabIndex = 6;
@@ -381,7 +382,7 @@
             // 
             // But_BEEP_OFF
             // 
-            this.But_BEEP_OFF.Location = new System.Drawing.Point(154, 69);
+            this.But_BEEP_OFF.Location = new System.Drawing.Point(87, 73);
             this.But_BEEP_OFF.Name = "But_BEEP_OFF";
             this.But_BEEP_OFF.Size = new System.Drawing.Size(75, 23);
             this.But_BEEP_OFF.TabIndex = 5;
@@ -391,7 +392,7 @@
             // 
             // But_BEEP_ON
             // 
-            this.But_BEEP_ON.Location = new System.Drawing.Point(73, 69);
+            this.But_BEEP_ON.Location = new System.Drawing.Point(6, 73);
             this.But_BEEP_ON.Name = "But_BEEP_ON";
             this.But_BEEP_ON.Size = new System.Drawing.Size(75, 23);
             this.But_BEEP_ON.TabIndex = 4;
@@ -401,7 +402,7 @@
             // 
             // But_LED1_OFF
             // 
-            this.But_LED1_OFF.Location = new System.Drawing.Point(154, 40);
+            this.But_LED1_OFF.Location = new System.Drawing.Point(87, 44);
             this.But_LED1_OFF.Name = "But_LED1_OFF";
             this.But_LED1_OFF.Size = new System.Drawing.Size(75, 23);
             this.But_LED1_OFF.TabIndex = 3;
@@ -411,7 +412,7 @@
             // 
             // But_LED1_ON
             // 
-            this.But_LED1_ON.Location = new System.Drawing.Point(73, 40);
+            this.But_LED1_ON.Location = new System.Drawing.Point(6, 44);
             this.But_LED1_ON.Name = "But_LED1_ON";
             this.But_LED1_ON.Size = new System.Drawing.Size(75, 23);
             this.But_LED1_ON.TabIndex = 2;
@@ -421,7 +422,7 @@
             // 
             // But_LED0_OFF
             // 
-            this.But_LED0_OFF.Location = new System.Drawing.Point(154, 11);
+            this.But_LED0_OFF.Location = new System.Drawing.Point(87, 15);
             this.But_LED0_OFF.Name = "But_LED0_OFF";
             this.But_LED0_OFF.Size = new System.Drawing.Size(75, 23);
             this.But_LED0_OFF.TabIndex = 1;
@@ -431,7 +432,7 @@
             // 
             // But_LED0_ON
             // 
-            this.But_LED0_ON.Location = new System.Drawing.Point(73, 11);
+            this.But_LED0_ON.Location = new System.Drawing.Point(6, 15);
             this.But_LED0_ON.Name = "But_LED0_ON";
             this.But_LED0_ON.Size = new System.Drawing.Size(75, 23);
             this.But_LED0_ON.TabIndex = 0;
@@ -447,7 +448,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
             this.textBox2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox2.Size = new System.Drawing.Size(230, 183);
+            this.textBox2.Size = new System.Drawing.Size(180, 183);
             this.textBox2.TabIndex = 14;
             // 
             // textBox3
@@ -470,23 +471,24 @@
             // Chart_ABC
             // 
             this.Chart_ABC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            chartArea1.Name = "ChartArea1";
-            this.Chart_ABC.ChartAreas.Add(chartArea1);
+            chartArea2.Name = "ChartArea1";
+            this.Chart_ABC.ChartAreas.Add(chartArea2);
             this.Chart_ABC.Location = new System.Drawing.Point(6, 20);
             this.Chart_ABC.Name = "Chart_ABC";
             this.Chart_ABC.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SemiTransparent;
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series1.IsXValueIndexed = true;
-            series1.Name = "Series1";
-            series1.Points.Add(dataPoint1);
-            series1.Points.Add(dataPoint2);
-            series1.Points.Add(dataPoint3);
-            series1.Points.Add(dataPoint4);
-            series1.Points.Add(dataPoint5);
-            series1.Points.Add(dataPoint6);
-            series1.Points.Add(dataPoint7);
-            this.Chart_ABC.Series.Add(series1);
+            series2.BorderWidth = 3;
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series2.IsXValueIndexed = true;
+            series2.Name = "Series1";
+            series2.Points.Add(dataPoint8);
+            series2.Points.Add(dataPoint9);
+            series2.Points.Add(dataPoint10);
+            series2.Points.Add(dataPoint11);
+            series2.Points.Add(dataPoint12);
+            series2.Points.Add(dataPoint13);
+            series2.Points.Add(dataPoint14);
+            this.Chart_ABC.Series.Add(series2);
             this.Chart_ABC.Size = new System.Drawing.Size(300, 182);
             this.Chart_ABC.TabIndex = 17;
             // 
@@ -509,7 +511,7 @@
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.Pic_LED0);
-            this.groupBox2.Location = new System.Drawing.Point(323, 260);
+            this.groupBox2.Location = new System.Drawing.Point(204, 215);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(122, 143);
             this.groupBox2.TabIndex = 19;
@@ -595,7 +597,7 @@
             this.groupBox3.Controls.Add(this.textBox4);
             this.groupBox3.Controls.Add(this.comboBox5);
             this.groupBox3.Controls.Add(this.Chart_ABC);
-            this.groupBox3.Location = new System.Drawing.Point(488, 18);
+            this.groupBox3.Location = new System.Drawing.Point(377, 18);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(312, 294);
             this.groupBox3.TabIndex = 20;
@@ -674,9 +676,9 @@
             this.But_Timer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.But_Timer.ImageKey = "OFF.png";
             this.But_Timer.ImageList = this.ImageList;
-            this.But_Timer.Location = new System.Drawing.Point(688, 393);
+            this.But_Timer.Location = new System.Drawing.Point(568, 358);
             this.But_Timer.Name = "But_Timer";
-            this.But_Timer.Size = new System.Drawing.Size(100, 23);
+            this.But_Timer.Size = new System.Drawing.Size(120, 32);
             this.But_Timer.TabIndex = 23;
             this.But_Timer.Text = "开启实时更新";
             this.But_Timer.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -706,18 +708,28 @@
             // textBox5
             // 
             this.textBox5.Enabled = false;
-            this.textBox5.Location = new System.Drawing.Point(688, 366);
+            this.textBox5.Location = new System.Drawing.Point(568, 331);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 21);
+            this.textBox5.Size = new System.Drawing.Size(97, 21);
             this.textBox5.TabIndex = 24;
             this.textBox5.Text = "2000";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(671, 334);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(17, 12);
+            this.label12.TabIndex = 25;
+            this.label12.Text = "ms";
             // 
             // MainFrom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(700, 450);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.But_Timer);
@@ -806,6 +818,7 @@
         private System.Windows.Forms.Button But_Timer;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Button But_ADC;
+        private System.Windows.Forms.Label label12;
     }
 }
 

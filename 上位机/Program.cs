@@ -13,27 +13,21 @@ namespace 上位机
         /// 应用程序的主入口点。
         /// </summary>
         [STAThread]
-        static void Main()
-        {
+        static void Main(){
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new SignForm());
             SignForm Sign = new SignForm();
-
             //界面转换
             Sign.ShowDialog();
-
-            if (Sign.DialogResult == DialogResult.OK)
-            {
+            if (Sign.DialogResult == DialogResult.OK){
                 Sign.Dispose();
                 Application.Run(new MainFrom());
             }
-            else if (Sign.DialogResult == DialogResult.Cancel)
-            {
+            else if (Sign.DialogResult == DialogResult.Cancel){
                 Sign.Dispose();
                 return;
             }
-
         }
     }
     public class XML
