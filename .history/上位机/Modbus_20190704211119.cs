@@ -71,7 +71,7 @@ namespace 上位机
         {
             if (cmd[0]==0x5a&&cmd[1]==0x5a)
             {
-                int suma=0;
+                int suma;
                 for (int i = 2; i < 11; i++)
                 {
                     suma+=cmd[i] & 0x0f;
