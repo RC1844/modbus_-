@@ -61,17 +61,39 @@ namespace 上位机
             }
             ADC_Data.Add(Data);
             int len = ADC_Data.Count;
-            Chart_ABC.Series[0].Points.Clear();
+            Chart_ADC.Series[0].Points.Clear();
             for (int i = 0; i < len; i++)
             {
-                Chart_ABC.Series[0].Points.AddY(ADC_Data[i]);
+                Chart_ADC.Series[0].Points.AddY(ADC_Data[i]);
+            }
+        }
+        private void ModBusCRC(ref byte[] cmd, int len)
+        {
+            if (cmd[0]==0x5a&&cmd[1]==0x5a)
+            {
+                int suma;
+                for (int i = 2; i < 11; i++)
+                {
+                    suma+=cmd[i] & 0x0f;
+                }
+                if (suma==cmd[11])
+                {
+                    cmd[0] -= 1;
+                }
+                else
+                {
+                    cmd[0] = 0;
+                }
             }
         }
         private void Modbus(ref byte[] indata, int len)
         {
-            ModBusCRC16(ref indata, len - 5, false);
-            if (indata[0] == 0xfe)
+
+            ModBusCRC(ref indata, len);
+
+            if (indata[0] == 0x59)
             {
+                Pic_LED0.Image = ImageList.Images[1];
                 switch (indata[1])
                 {
                     case 0x00:

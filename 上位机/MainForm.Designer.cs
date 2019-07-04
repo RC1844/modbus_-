@@ -30,15 +30,15 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainFrom));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint8 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 0D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint9 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 0D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint10 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 0D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint11 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 0D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint12 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 0D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint13 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 0D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint14 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 10D);
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint1 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 0D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint2 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 0D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint3 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 0D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint4 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 0D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint5 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 0D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint6 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 0D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint7 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 10D);
             this.serialPort = new System.IO.Ports.SerialPort(this.components);
             this.comboBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -73,7 +73,7 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.But_PortWrite = new System.Windows.Forms.Button();
-            this.Chart_ABC = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.Chart_ADC = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.Pic_LED0 = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -97,7 +97,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.statusStrip.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Chart_ABC)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Chart_ADC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pic_LED0)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Pic_BEEP)).BeginInit();
@@ -468,29 +468,29 @@
             this.But_PortWrite.UseVisualStyleBackColor = true;
             this.But_PortWrite.Click += new System.EventHandler(this.Button1_Click);
             // 
-            // Chart_ABC
+            // Chart_ADC
             // 
-            this.Chart_ABC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            chartArea2.Name = "ChartArea1";
-            this.Chart_ABC.ChartAreas.Add(chartArea2);
-            this.Chart_ABC.Location = new System.Drawing.Point(6, 20);
-            this.Chart_ABC.Name = "Chart_ABC";
-            this.Chart_ABC.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SemiTransparent;
-            series2.BorderWidth = 3;
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series2.IsXValueIndexed = true;
-            series2.Name = "Series1";
-            series2.Points.Add(dataPoint8);
-            series2.Points.Add(dataPoint9);
-            series2.Points.Add(dataPoint10);
-            series2.Points.Add(dataPoint11);
-            series2.Points.Add(dataPoint12);
-            series2.Points.Add(dataPoint13);
-            series2.Points.Add(dataPoint14);
-            this.Chart_ABC.Series.Add(series2);
-            this.Chart_ABC.Size = new System.Drawing.Size(300, 182);
-            this.Chart_ABC.TabIndex = 17;
+            this.Chart_ADC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            chartArea1.Name = "ChartArea1";
+            this.Chart_ADC.ChartAreas.Add(chartArea1);
+            this.Chart_ADC.Location = new System.Drawing.Point(6, 20);
+            this.Chart_ADC.Name = "Chart_ADC";
+            this.Chart_ADC.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SemiTransparent;
+            series1.BorderWidth = 3;
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series1.IsXValueIndexed = true;
+            series1.Name = "Series1";
+            series1.Points.Add(dataPoint1);
+            series1.Points.Add(dataPoint2);
+            series1.Points.Add(dataPoint3);
+            series1.Points.Add(dataPoint4);
+            series1.Points.Add(dataPoint5);
+            series1.Points.Add(dataPoint6);
+            series1.Points.Add(dataPoint7);
+            this.Chart_ADC.Series.Add(series1);
+            this.Chart_ADC.Size = new System.Drawing.Size(300, 182);
+            this.Chart_ADC.TabIndex = 17;
             // 
             // Pic_LED0
             // 
@@ -596,7 +596,7 @@
             this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Controls.Add(this.textBox4);
             this.groupBox3.Controls.Add(this.comboBox5);
-            this.groupBox3.Controls.Add(this.Chart_ABC);
+            this.groupBox3.Controls.Add(this.Chart_ADC);
             this.groupBox3.Location = new System.Drawing.Point(377, 18);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(312, 294);
@@ -746,7 +746,7 @@
             this.statusStrip.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Chart_ABC)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Chart_ADC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pic_LED0)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -793,7 +793,7 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Button But_PortWrite;
-        private System.Windows.Forms.DataVisualization.Charting.Chart Chart_ABC;
+        private System.Windows.Forms.DataVisualization.Charting.Chart Chart_ADC;
         private System.Windows.Forms.Button But_LEDFlsh;
         private System.Windows.Forms.CheckBox Check_LED1;
         private System.Windows.Forms.CheckBox Check_LED0;
