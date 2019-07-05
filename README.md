@@ -1,13 +1,13 @@
 # modbus_上位机
 ## 本程序仅是modbus协议的简单使用，用于交流学习，仅供参考
 ## 简单的登陆界面
- ![Sign](README\SignIn.png) 
+ ![Sign](README/SignIn.png) 
 > 登陆账户密码均为admin
 ## 程序主界面
- ![Main](README\Main.png) 
+ ![Main](README/Main.png) 
  > 要启用所有功能需要打开调试模式(伪 :p)
 ## MODBUS协议数据结构
-![Modbus](README\Modbus.png)
+![Modbus](README/Modbus.png)
 ## 上下位机协议
 - ### 下位机 
 |指令|数据|数据位数(字节)|功能|
@@ -37,6 +37,6 @@
 |0x01|外部中断次数|4|将外部中断次数显示在textBox1中|
 |0xa0|ADC数值|2|获取ADC值并将数值更新到Chart图表|
 ## 程序处理方法结构图
-![Process](README\Process.png)
+![Process](README/Process.png)
 ## 其他
 [下位机参考程序](https://github.com/RC1844/modbus_CSharp/releases)是基于正点原子NANO STM32F1开发板源码改写的，仅供参考
