@@ -370,7 +370,7 @@
             this.But_BEEP_Delay.TabIndex = 7;
             this.But_BEEP_Delay.Text = "BEEP短鸣";
             this.But_BEEP_Delay.UseVisualStyleBackColor = true;
-            this.But_BEEP_Delay.Click += new System.EventHandler(this.But_BEEP_Delay_Click);
+            this.But_BEEP_Delay.Click += new System.EventHandler(this.Button_Click);
             // 
             // BEEP_ms
             // 
@@ -388,7 +388,7 @@
             this.But_BEEP_OFF.TabIndex = 5;
             this.But_BEEP_OFF.Text = "BEEP关";
             this.But_BEEP_OFF.UseVisualStyleBackColor = true;
-            this.But_BEEP_OFF.Click += new System.EventHandler(this.But_BEEP_OFF_Click);
+            this.But_BEEP_OFF.Click += new System.EventHandler(this.Button_Click);
             // 
             // But_BEEP_ON
             // 
@@ -398,7 +398,7 @@
             this.But_BEEP_ON.TabIndex = 4;
             this.But_BEEP_ON.Text = "BEEP开";
             this.But_BEEP_ON.UseVisualStyleBackColor = true;
-            this.But_BEEP_ON.Click += new System.EventHandler(this.But_BEEP_ON_Click);
+            this.But_BEEP_ON.Click += new System.EventHandler(this.Button_Click);
             // 
             // But_LED1_OFF
             // 
@@ -408,7 +408,7 @@
             this.But_LED1_OFF.TabIndex = 3;
             this.But_LED1_OFF.Text = "LED1关";
             this.But_LED1_OFF.UseVisualStyleBackColor = true;
-            this.But_LED1_OFF.Click += new System.EventHandler(this.But_LED1_OFF_Click);
+            this.But_LED1_OFF.Click += new System.EventHandler(this.Button_Click);
             // 
             // But_LED1_ON
             // 
@@ -418,7 +418,7 @@
             this.But_LED1_ON.TabIndex = 2;
             this.But_LED1_ON.Text = "LED1开";
             this.But_LED1_ON.UseVisualStyleBackColor = true;
-            this.But_LED1_ON.Click += new System.EventHandler(this.But_LED1_ON_Click);
+            this.But_LED1_ON.Click += new System.EventHandler(this.Button_Click);
             // 
             // But_LED0_OFF
             // 
@@ -428,7 +428,7 @@
             this.But_LED0_OFF.TabIndex = 1;
             this.But_LED0_OFF.Text = "LED0关";
             this.But_LED0_OFF.UseVisualStyleBackColor = true;
-            this.But_LED0_OFF.Click += new System.EventHandler(this.But_LED0_OFF_Click);
+            this.But_LED0_OFF.Click += new System.EventHandler(this.Button_Click);
             // 
             // But_LED0_ON
             // 
@@ -438,7 +438,7 @@
             this.But_LED0_ON.TabIndex = 0;
             this.But_LED0_ON.Text = "LED0开";
             this.But_LED0_ON.UseVisualStyleBackColor = true;
-            this.But_LED0_ON.Click += new System.EventHandler(this.But_LED0_ON_Click);
+            this.But_LED0_ON.Click += new System.EventHandler(this.Button_Click);
             // 
             // textBox2
             // 
