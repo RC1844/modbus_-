@@ -36,7 +36,7 @@
 |0x00|0x11,0x01|2|显示LED0为开、LED1为开和蜂鸣器为开|
 |0x01|外部中断次数|4|将外部中断次数显示在textBox1中|
 |0xa0|ADC数值|2|获取ADC值并将数值更新到Chart图表|
-## 程序处理方法结构图
+## 数据处理方法结构图
 ![Process](README/Process.png)
 ## 其他
 [下位机参考程序](https://github.com/RC1844/modbus_CSharp/releases)是基于正点原子NANO STM32F1开发板源码改写的，仅供参考
