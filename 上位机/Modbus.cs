@@ -14,35 +14,15 @@ namespace 上位机
         /// </summary>
         private void Modbus(ref byte[] indata, int len)
         {
-            ModBusCRC(ref indata, len);
-            if (indata[0] == 0x59)
+            ModBusCRC16(ref indata, len - 5, false);
+            if (indata[0] == 0xFE)
             {
-                Pic_LED0.Image = ImageList.Images[1];
                 switch (indata[1])
                 {
                     case 0x00:
+                        Pic_LED0.Image = ImageList.Images[indata[2] & 0x0F];
+                        Pic_LED1.Image = ImageList.Images[indata[2] >> 4];
                         Pic_BEEP.Image = ImageList.Images[indata[3]];
-                        switch (indata[2])
-                        {
-                            case 0x00:
-                                Pic_LED1.Image = ImageList.Images[0];
-                                Pic_LED0.Image = ImageList.Images[0];
-                                break;
-                            case 0x01:
-                                Pic_LED1.Image = ImageList.Images[0];
-                                Pic_LED0.Image = ImageList.Images[1];
-                                break;
-                            case 0x10:
-                                Pic_LED1.Image = ImageList.Images[1];
-                                Pic_LED0.Image = ImageList.Images[0];
-                                break;
-                            case 0x11:
-                                Pic_LED1.Image = ImageList.Images[1];
-                                Pic_LED0.Image = ImageList.Images[1];
-                                break;
-                            default:
-                                break;
-                        }
                         break;
                     case 0x01:
                         textBox1.Text = (Get_Data(ref indata, 2, 5)).ToString();
@@ -122,31 +102,6 @@ namespace 上位机
         }
 
         /// <summary>
-        /// RCR校验
-        /// </summary>
-        /// <param name="cmd">校验数据</param>
-        /// <param name="len">数据长度</param>
-        private void ModBusCRC(ref byte[] cmd, int len)
-        {
-            if (cmd[0] == 0x5a && cmd[1] == 0x5a)
-            {
-                int suma = 0;
-                for (int i = 2; i < 11; i++)
-                {
-                    suma += cmd[i] & 0x0f;
-                }
-                if (suma == cmd[11])
-                {
-                    cmd[0] -= 1;
-                }
-                else
-                {
-                    cmd[0] = 0;
-                }
-            }
-        }
-
-        /// <summary>
         /// 接收数据显示
         /// </summary>
         private void SerialPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
@@ -171,22 +126,20 @@ namespace 上位机
                 //MessageBox.Show(error.Message);
             }
         }
-        /// <summary>
-        /// ADC图表更新
-        /// </summary>
-        private List<int> ADC_Data = new List<int> { 0, 0, 0, 0, 0, 0 };
+
+        public List<int> ADC_Data1 = new List<int> { 0, 0, 0, 0, 0, 0 };
         private void ADC_Chart(int Data)
         {
-            if (ADC_Data.Count >= 7)
+            if (ADC_Data1.Count >= 7)
             {
-                ADC_Data.RemoveAt(0);
+                ADC_Data1.RemoveAt(0);
             }
-            ADC_Data.Add(Data);
-            int len = ADC_Data.Count;
+            ADC_Data1.Add(Data);
+            int len = ADC_Data1.Count;
             Chart_ADC.Series[0].Points.Clear();
             for (int i = 0; i < len; i++)
             {
-                Chart_ADC.Series[0].Points.AddY(ADC_Data[i]);
+                Chart_ADC.Series[0].Points.AddY(ADC_Data1[i]);
             }
         }
         /// <summary>
