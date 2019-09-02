@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace 上位机
+namespace HostComputer
 {
     public partial class SignForm : Form
     {

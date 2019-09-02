@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{133BB2F1-476D-4C39-A362-3E56A29BFDC3}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>上位机</RootNamespace>
-    <AssemblyName>上位机</AssemblyName>
+    <RootNamespace>HostComputer</RootNamespace>
+    <AssemblyName>Host computer</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -79,6 +79,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="SignForm.resx">
       <DependentUpon>SignForm.cs</DependentUpon>

@@ -5,14 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace 上位机
+namespace HostComputer
 {
-    partial class MainFrom
+    partial class MainForm
     {
         /// <summary>
         /// 状态更新
         /// </summary>
-        private void Modbus(ref byte[] indata, int len)
+        private void ModbusAnalysis(ref byte[] indata, int len)
         {
             ModBusCRC16(ref indata, len - 5, false);
             if (indata[0] == 0xFE)
@@ -119,7 +119,7 @@ namespace 上位机
                     temp += string.Format("0x{0:X2} ", item);
                 }
                 textBox2.AppendText(temp + "\r\n");
-                Modbus(ref indata, len);
+                ModbusAnalysis(ref indata, len);
             }
             catch /*(Exception error)*/
             {

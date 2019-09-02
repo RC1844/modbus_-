@@ -9,11 +9,11 @@ using System.Windows.Forms;
 using System.IO.Ports;
 using System.Threading;
 
-namespace 上位机
+namespace HostComputer
 {
-    public partial class MainFrom : Form
+    public partial class MainForm : Form
     {
-        public MainFrom()
+        public MainForm()
         {
             InitializeComponent();
             ///初始设置
@@ -110,6 +110,10 @@ namespace 上位机
             else if (name == But_BEEP_Delay.Name)
             {
                 PortWrite(0x04, Convert.ToUInt16(BEEP_ms.Text), 2);
+            }
+            else
+            {
+                ;
             }
         }
         /// <summary>

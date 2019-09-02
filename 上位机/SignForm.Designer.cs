@@ -1,4 +1,4 @@
-﻿namespace 上位机
+﻿namespace HostComputer
 {
     partial class SignForm
     {

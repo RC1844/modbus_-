@@ -5,7 +5,7 @@ using System.Linq;
 using System.Windows.Forms;
 using System.Xml;
 
-namespace 上位机
+namespace HostComputer
 {
     static class Program
     {
@@ -23,34 +23,13 @@ namespace 上位机
             if (Sign.DialogResult == DialogResult.OK)
             {
                 Sign.Dispose();
-                Application.Run(new MainFrom());
+                Application.Run(new MainForm());
             }
             else if (Sign.DialogResult == DialogResult.Cancel)
             {
                 Sign.Dispose();
                 return;
             }
-        }
-    }
-    public class XML
-    {
-        public string XmlPath;
-        private readonly string pasword;
-
-        public string User { get; }
-        public bool Sign(string users,string pass)
-        {
-            //创XML建对象
-            XmlDocument XmlDoc = new XmlDocument();
-            if (File.Exists(XmlPath))
-            {
-                XmlDoc.Load(XmlPath);
-                XmlElement Root ;
-                Root = XmlDoc.DocumentElement;
-                XmlNode auser = Root.SelectSingleNode("user");
-
-            }
-            return false;
         }
     }
 }
