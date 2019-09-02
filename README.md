@@ -39,4 +39,4 @@
 ## 数据处理方法结构图
 ![Process](README/Process.png)
 ## 其他
-[下位机参考程序](https://github.com/RC1844/modbus_CSharp/tree/master/SlaveComputer)是基于正点原子NANO STM32F1开发板和探索者STM32F4开发板源码改写的，仅供参考
+[下位机参考程序](SlaveComputer)是基于正点原子NANO STM32F1开发板和探索者STM32F4开发板源码改写的，仅供参考
